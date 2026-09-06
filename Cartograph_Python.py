@@ -86,8 +86,8 @@ class Game:
         #Check for last save point
         print(f"\nGame last saved {self.last_saved}\n")
         print("Save game?\n")
-        try:
-        is_save = int(input("1 = Save   2 = Quit\n"))
+        while is_save not in [1,2]:
+            is_save = int(input("1 = Save   2 = Quit\n"))
         if is_save == 1:
             save_game(self)
         else:
@@ -262,7 +262,7 @@ def main():
     saved_vars = None
 
     #Check if new game or loaded game
-    while is_new_game not in [1,2]
+    while is_new_game not in [1,2]:
         is_new_game = int(input('\nEnter 1 for New Game. Enter 2 to Load Game\n'))
 
     #If new game is chosen, create a new Game object
